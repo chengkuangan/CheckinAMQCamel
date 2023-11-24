@@ -24,8 +24,11 @@ Consumes booking information from Kafka topic, convert the JSON data into delimi
     ```
     oc apply -f yaml/amq/artemis.yaml
     ```
+**Deploy Application to OCP**
 
-3. Set the `${APPS_NAMESPACE}`, `${KAFKA_BOOTSTRAP_SERVER}`, `${AMQ_URL}`, `${AMQ_USERNAME}` and `${AMQ_PASSWORD}`. Run the following command to deploy to OpenShift.
+Note: Make sure you have login and you have the neccessary project created.
+
+1. Set the `${APPS_NAMESPACE}`, `${KAFKA_BOOTSTRAP_SERVER}`, `${AMQ_URL}`, `${AMQ_USERNAME}` and `${AMQ_PASSWORD}`. Run the following command to deploy to OpenShift.
 
     ```
     cd ../CheckinAMQCamel/
