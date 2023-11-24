@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  amq:
+    image: chengkuan/apache-artemis:2.17.0-SNAPSHOT
+    healthcheck:
+      test:
+        ["CMD", "./bin/artemis", "check", "node", "--user", "${ARTEMIS_USER}", "--password", "${ARTEMIS_PASSWORD}"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+    environment:
+     - ARTEMIS_USER=admin
+     - ARTEMIS_PASSWORD=admin
+    ports:
+     - 61616:61616
+     - 8161:8161
+    volumes:
+      - /var/lib/artemis-instance
